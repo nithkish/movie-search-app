@@ -1,0 +1,14 @@
+footer {
+    display:flex;
+    justify-content: space-around;
+    background-color: var(--header-footer-bg);
+    color: var(--footer-text);
+    font-weight:600;
+    position: absolute;
+    bottom: 0;
+    width: 100%
+}
+
+footer div {
+    padding : 25px;
+}

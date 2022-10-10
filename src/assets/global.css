@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+  --header-footer-bg: #424242;
+  --footer-text: #edc334;
+}
+
+.App {
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", Arial !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #cfd8dc !important;
+}
+
+.app-container {
+  max-width: 1080px;
+  margin: 20px auto;
+}

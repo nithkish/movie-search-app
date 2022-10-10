@@ -1,0 +1,8 @@
+.dropdown-item.active, .dropdown-item:active{
+    background-color: #6c757d !important;
+}
+
+#dropdown-button-drop-down {
+  height: 40px;
+}
+
