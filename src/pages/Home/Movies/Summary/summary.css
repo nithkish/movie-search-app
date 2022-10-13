@@ -1,0 +1,24 @@
+.summary-container {
+  width: 100%;
+  border-radius: 6px;
+  color: #fff;
+  background-color: #041C32;
+  padding: 10px 20px 20px 20px;
+  box-sizing: border-box;
+}
+
+.summary-container p {
+    word-wrap: break-word;
+}
+
+.summary-container div div {
+    font-weight:600;
+    color: var(--footer-text);
+}
+
+.summary-container span{
+    color: #eeeeee;
+    font-weight:400;
+}
+
+
