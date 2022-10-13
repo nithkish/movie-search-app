@@ -1,7 +1,7 @@
 footer {
     display:flex;
     justify-content: space-around;
-    background-color: var(--header-footer-bg);
+    background-color: transparent;
     color: var(--footer-text);
     font-weight:600;
     position: absolute;

@@ -5,6 +5,10 @@ const initialState = {
   moviesList: [],
   isLoading: false,
   message: "",
+  searchValue: null,
+  sortValue: null,
+  selectedEpisode: null,
+  openModal: false,
 };
 
 export const moviesSlice = createSlice({
@@ -12,19 +16,25 @@ export const moviesSlice = createSlice({
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
-    sort: (state) => {
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the Immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
-      state.value += 1;
+    setSearch: (state, { payload }) => {
+      state.searchValue = payload;
     },
-    decrement: (state) => {
-      state.value -= 1;
+    sortBy: (state, { payload }) => {
+      state.moviesList = state.moviesList.sort((movie1, movie2) => {
+        if (payload === "episode") return movie1.episode_id - movie2.episode_id;
+        else if (payload === "year")
+          return (
+            movie1.release_date.slice(0, 4) - movie2.release_date.slice(0, 4)
+          );
+      });
+      state.sortValue = payload;
     },
-    // Use the PayloadAction type to declare the contents of `action.payload`
-    incrementByAmount: (state, action) => {
-      state.value += action.payload;
+    selectMovie: (state, { payload }) => {
+      state.selectedEpisode = payload;
+      state.openModal = true;
+    },
+    closeModal: (state) => {
+      state.openModal = false;
     },
   },
   // The `extraReducers` field lets the slice handle actions defined elsewhere,
@@ -35,7 +45,7 @@ export const moviesSlice = createSlice({
     },
     [getMovies.fulfilled]: (state, { payload }) => {
       state.isLoading = false;
-      state.moviesList = payload;
+      state.moviesList = payload.results;
     },
     [getMovies.rejected]: (state, { payload }) => {
       state.isLoading = false;
@@ -44,7 +54,7 @@ export const moviesSlice = createSlice({
   },
 });
 
-export const { increment, decrement, incrementByAmount } = moviesSlice.actions;
+export const { setSearch, sortBy, selectMovie, closeModal } = moviesSlice.actions;
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of

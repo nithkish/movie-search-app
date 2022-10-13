@@ -1,23 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
 
 :root {
-  --header-footer-bg: #424242;
-  --footer-text: #edc334;
+  --footer-text: #ecb365;
+  --bg-color: #04293a;
 }
 
 .App {
   text-align: center;
+  position: relative;
+  min-height: 100vh;
+
 }
 
 body {
   margin: 0;
-  font-family: "Roboto", Arial !important;
+  font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #cfd8dc !important;
+  background-color: var(--bg-color);
 }
 
 .app-container {
-  max-width: 1080px;
+  max-width: 1200px;
   margin: 20px auto;
+}
+
+button {
+  height: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  padding: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--footer-text);
+  border: 2px solid var(--footer-text);
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity: 1;
 }
