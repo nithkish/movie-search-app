@@ -11,26 +11,26 @@
 
 .searchTerm {
   width: 100%;
-  border: 3px solid #eeeeee;
+  border: 3px solid var(--white);
   border-right: none;
   padding: 5px;
   border-radius: 5px 0 0 5px;
   outline: none;
-  color: #616161;
-  background-color: #eeeeee;
+  color: var(--dark-grey);
+  background-color: var(--white);
   font-size: 16px;
-  font-family: "Inter",sans-serif;
+  font-family: var(--font-inter);
 }
 
 .searchTerm:focus {
-  color: #140a0a;
+  color: var(--black);
 }
 
 .searchButton {
-  border: 1px solid #eeeeee;
-  background: #eeeeee;
+  border: 1px solid var(--white);
+  background: var(--white);
   text-align: center;
-  color: #fff;
+  color: var(--white);
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   padding: 10px 10px;

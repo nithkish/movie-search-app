@@ -1,20 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
 
 :root {
-  --footer-text: #ecb365;
-  --bg-color: #04293a;
+  --yellow: #d8a804;
+  --bg-color: #191a1a;
+  --sec-black: #101417;
+  --white: #d5d4d4;
+  --black: #212121;
+  --dark-grey: #424242;
+  --light-grey: #b9b9b9;
+  --jet: #343434;
+  --pure-white: #f3f3f3;
+  --font-inter: "Inter", sans-serif;
+  --font-barlow: "Barlow", sans-serif;
 }
 
 .App {
   text-align: center;
   position: relative;
   min-height: 100vh;
-
 }
 
 body {
   margin: 0;
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-inter);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg-color);
@@ -29,12 +37,12 @@ button {
   height: 40px;
   font-size: 14px;
   font-weight: 600;
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-inter);
   padding: 0 10px;
   border-radius: 5px;
   cursor: pointer;
-  background-color: var(--footer-text);
-  border: 2px solid var(--footer-text);
+  background-color: var(--yellow);
+  border: 2px solid var(--yellow);
   opacity: 0.9;
 }
 

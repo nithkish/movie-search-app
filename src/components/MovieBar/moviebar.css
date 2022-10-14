@@ -1,6 +1,6 @@
 .movie-bar {
-  background: #d5d4d4;
-  border: 1px solid #c5c5c5;
+  background: var(--light-grey);
+  border: 1px solid var(--light-grey);
   border-radius: 20px;
   position: relative;
   margin-bottom: 18px;
@@ -10,13 +10,19 @@
 .movie-bar:hover {
   opacity: 1;
 }
- 
+
+.movie-bar.selected{
+  opacity:1;
+  background: var(--yellow);
+    border: 1px solid var(--yellow);
+}
+
 .selected .movie-item {
-  background-color: var(--footer-text);
+  background-color: var(--yellow);
 }
 
 .movie-item {
-  background-color: #f5f5f5;
+  background-color: var(--white);
   border-radius: 15px;
   height: 40px;
   margin: 5px;
@@ -33,7 +39,7 @@
 }
 
 .description {
-  color: #212121;
+  color: var(--black);
   flex: 1 0;
   font-weight: 600;
   font-size: 16px;
@@ -42,7 +48,7 @@
 }
 
 .date {
-  color: #424242;
+  color: var(--dark-grey);
 }
 
 .episode,

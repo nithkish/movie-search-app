@@ -1,13 +1,13 @@
 const sortOptions = [
   {
     id: 1,
-    title: "Year",
-    name: "year",
+    title: "Episode",
+    name: "episode",
   },
   {
     id: 2,
-    title: "Episode",
-    name: "episode",
+    title: "Year",
+    name: "year",
   },
 ];
 

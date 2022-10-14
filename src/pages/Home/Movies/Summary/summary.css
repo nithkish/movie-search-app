@@ -1,24 +1,22 @@
 .summary-container {
   width: 100%;
   border-radius: 6px;
-  color: #fff;
-  background-color: #041C32;
+  color: var(--light-grey);
+  background-color: var(--sec-black);
   padding: 10px 20px 20px 20px;
   box-sizing: border-box;
 }
 
 .summary-container p {
-    word-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .summary-container div div {
-    font-weight:600;
-    color: var(--footer-text);
+  font-weight: 600;
+  color: var(--yellow);
 }
 
-.summary-container span{
-    color: #eeeeee;
-    font-weight:400;
+.summary-container span {
+  color: var(--light-grey);
+  font-weight: 400;
 }
-
-
