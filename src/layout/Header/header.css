@@ -1,10 +1,16 @@
 header {
-    background-color: transparent;
-    display: flex;
-    justify-content: center;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
 }
 
-header img {
-    height:80px;
-    margin:25px 0;
+header a img {
+  height: 80px;
+  margin: 25px 0;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+header a img:hover {
+  opacity: 1;
 }

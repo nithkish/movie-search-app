@@ -1,12 +1,12 @@
 import MovieBar from "../../../../components/MovieBar/MovieBar";
 import { useSelector } from "react-redux/es/hooks/useSelector";
-import { selectMoviesList } from "../../../../features/movies/moviesSlice";
+import { selectMoviesList, selectSearchValue } from "../../../../redux/movies/moviesSlice";
 import { useFilteredList } from "../../../../hooks/useFilteredList";
 import "./movieslist.css";
 
 const MoviesList = () => {
   const moviesList = useSelector(selectMoviesList);
-  const searchValue = useSelector(state=>state.movies.searchValue);
+  const searchValue = useSelector(selectSearchValue);
 
   const filteredList = useFilteredList(moviesList,searchValue);
 

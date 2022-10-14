@@ -3,7 +3,7 @@ import Sort from "../../../components/Sort/Sort";
 import { useDebounce } from "../../../hooks/useDebounce";
 import { useDispatch } from "react-redux/es/hooks/useDispatch";
 import { useEffect, useState } from "react";
-import { setSearch } from "../../../features/movies/moviesSlice";
+import { setSearch } from "../../../redux/movies/moviesSlice";
 import sortOptions from "../../../constants/sortOptions";
 import "./controlbar.css"
 

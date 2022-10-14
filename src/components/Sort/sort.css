@@ -4,6 +4,7 @@
 }
 
 .sort-content {
+  width:150px;
   background-color: var(--white);
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -11,6 +12,7 @@
   position: absolute;
   right: 0;
   border-radius: 5px;
+  border:1px var(--dark-grey) solid;
   padding:5px;
 }
 
@@ -34,11 +36,11 @@
 
 .sort-content .selected {
   color:var(--white);
-  background-color: var(--bg-color);  
+  background-color: var(--dark-grey);  
 }
 
 .sort-content div:hover {
-  background-color: var(--yellow);
+  background-color: var(--light-grey);
   cursor:pointer;
 }
 

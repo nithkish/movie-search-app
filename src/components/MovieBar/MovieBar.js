@@ -1,16 +1,19 @@
 import { useDispatch } from "react-redux/es/hooks/useDispatch";
 import { useSelector } from "react-redux/es/hooks/useSelector";
-import { selectMovie } from "../../features/movies/moviesSlice";
+import {
+  selectMovie,
+  selectSelectedEpisode,
+} from "../../redux/movies/moviesSlice";
 import classNames from "classnames";
 import "./moviebar.css";
 
 const MovieBar = ({ movie }) => {
-  const selected_episode = useSelector((state) => state.movies.selectedEpisode);
+  const selected_episode = useSelector(selectSelectedEpisode);
   const dispatch = useDispatch();
 
   let movieBarClass = classNames({
     "movie-bar": true,
-    "selected": selected_episode== movie.episode_id,
+    selected: selected_episode === movie.episode_id,
   });
 
   const handleClick = (id) => {

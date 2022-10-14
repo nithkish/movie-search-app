@@ -4,7 +4,7 @@
   color: var(--light-grey);
   background-color: var(--sec-black);
   padding: 10px 20px 20px 20px;
-  box-sizing: border-box;
+  box-shadow:-3px 7px 20px 0px #292727;
 }
 
 .summary-container p {

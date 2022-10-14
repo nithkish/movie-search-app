@@ -5,10 +5,12 @@ import "./header.css";
 
 const Header = () => (
   <header>
+    <a href="https://www.starwars.com/" target="_blank">
       <img
         alt="Star_Wars"
         src={logo}
       />
+      </a>
   </header>
 );
 

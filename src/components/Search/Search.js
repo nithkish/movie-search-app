@@ -12,7 +12,7 @@ const Search = ({ searchValue, setSearchValue }) => {
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
         />
-        <img class="searchButton" src={search_icon} />
+        <img class="searchButton" src={search_icon} alt="search icon" />
       </div>
     </div>
   );
