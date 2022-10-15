@@ -1,13 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
 
 :root {
-  --yellow: #d8a804;
+  --yellow: #ffca28;
   --bg-color: #161b22;
   --sec-black: #010409;
-  --white: #d5d4d4;
+  --white: #edeaea;
   --black: #212121;
   --dark-grey: #424242;
   --light-grey: #b9b9b9;
+  --grey:#7d7a7a;
   --jet: #343434;
   --pure-white: #f3f3f3;
   --font-inter: "Inter", sans-serif;
@@ -43,9 +44,5 @@ button {
   cursor: pointer;
   background-color: var(--yellow);
   border: 2px solid var(--yellow);
-  opacity: 0.9;
-}
-
-button:hover {
   opacity: 1;
 }

@@ -1,6 +1,6 @@
 .movie-bar {
-  background: var(--light-grey);
-  border: 1px solid var(--light-grey);
+  background: var(--grey);
+  border: 1px solid var(--grey);
   border-radius: 20px;
   position: relative;
   margin-bottom: 18px;
