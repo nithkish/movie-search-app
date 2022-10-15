@@ -5,22 +5,22 @@ import { useDispatch } from "react-redux/es/hooks/useDispatch";
 import { useEffect, useState } from "react";
 import { setSearch } from "../../../redux/movies/moviesSlice";
 import sortOptions from "../../../constants/sortOptions";
-import "./controlbar.css"
+import "./controlbar.css";
 
 const ControlBar = () => {
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState<string>("");
   const dispatch = useDispatch();
 
   const debouncedSearchValue = useDebounce(searchValue, 500);
 
-  useEffect(()=>{
-      dispatch(setSearch(debouncedSearchValue));
-  },[debouncedSearchValue])
+  useEffect(() => {
+    dispatch(setSearch(debouncedSearchValue));
+  }, [debouncedSearchValue]);
 
   return (
     <div className="control-bar-container">
-      <Search searchValue={searchValue} setSearchValue={setSearchValue}/>
-      <Sort sortOptions={sortOptions}/>
+      <Search searchValue={searchValue} setSearchValue={setSearchValue} />
+      <Sort sortOptions={sortOptions} />
     </div>
   );
 };

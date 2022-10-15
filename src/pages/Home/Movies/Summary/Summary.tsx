@@ -11,7 +11,7 @@ const Summary = () => {
   return (
     <div className="summary-container">
       <h2>Summary</h2>
-      {selectedEpisode ? (
+      {selectedEpisode && selectedMovie? (
         <div>
           <h3>{selectedMovie.title}</h3>
           <p>{selectedMovie.opening_crawl}</p>

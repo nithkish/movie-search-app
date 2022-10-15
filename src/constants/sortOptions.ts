@@ -1,4 +1,11 @@
-const sortOptions = [
+
+export interface SortOption {
+  id: number;
+  title: string;
+  name: string;
+}
+
+const sortOptions: SortOption[] = [
   {
     id: 1,
     title: "Episode",

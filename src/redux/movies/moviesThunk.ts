@@ -9,7 +9,7 @@ export const getMovies = createAsyncThunk(
       const { data } = await getMoviesByFormat("json");
       // The value we return becomes the `fulfilled` action payload
       return data;
-    } catch (error) {
+    } catch (error:any) {
       rejectWithValue(error);
       // The error becomes the `rejected` action payload
     }

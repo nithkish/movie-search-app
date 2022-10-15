@@ -5,9 +5,14 @@ import {
   selectSelectedEpisode,
 } from "../../redux/movies/moviesSlice";
 import classNames from "classnames";
+import { Movie } from "../../redux/movies/moviesSlice";
 import "./moviebar.css";
 
-const MovieBar = ({ movie }) => {
+interface MovieBarProps {
+  movie: Movie;
+}
+
+const MovieBar = ({ movie }: MovieBarProps) => {
   const selected_episode = useSelector(selectSelectedEpisode);
   const dispatch = useDispatch();
 
@@ -16,7 +21,7 @@ const MovieBar = ({ movie }) => {
     selected: selected_episode === movie.episode_id,
   });
 
-  const handleClick = (id) => {
+  const handleClick = (id: number) => {
     dispatch(selectMovie(id));
   };
 

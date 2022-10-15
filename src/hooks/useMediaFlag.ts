@@ -5,13 +5,13 @@ import { useState, useEffect } from "react";
  * @param {string} mediaParam
  * @returns {boolean} true if current screen resolution matches input range
  */
-function useMediaFlag(mediaParam) {
-  const [match, setMatch] = useState(null);
+function useMediaFlag(mediaParam: string) {
+  const [match, setMatch] = useState<boolean | null>(null);
 
   useEffect(() => {
     window
-    .matchMedia(mediaParam)
-    .addEventListener("change", (event) => setMatch(event.matches));
+      .matchMedia(mediaParam)
+      .addEventListener("change", (event) => setMatch(event.matches));
   }, [window.innerWidth]);
 
   return match;

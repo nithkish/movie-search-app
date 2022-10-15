@@ -2,8 +2,13 @@ import close from "../../assets/icons/circle-xmark-regular.svg";
 import { useDispatch } from "react-redux/es/hooks/useDispatch";
 import { closeModal } from "../../redux/movies/moviesSlice";
 import "./modal.css";
+import React from "react";
 
-const Modal = ({ children }) => {
+interface ModalProps {
+  children: React.ReactNode;
+}
+
+const Modal = ({ children }: ModalProps) => {
   const dispatch = useDispatch();
 
   const handleClose = () => {
