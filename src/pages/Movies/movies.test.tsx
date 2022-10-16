@@ -77,16 +77,72 @@ describe("Movies", () => {
     const movies = container.getElementsByTagName("main");
     expect(movies[0]).toBeInTheDocument();
   });
-  it("displays child components properly", () => {
+  it("displays movie list properly and no movie selected message is displayed", () => {
     const { container } = render(
       <Provider store={store}>
         <Movies />
       </Provider>
     );
-    const search = container.getElementsByClassName("movie-list-container");
-    expect(search[0]).toBeInTheDocument();
-    expect(screen.getByText("MOVIES LIST")).toBeInTheDocument();
-    expect(screen.getByText("SUMMARY")).toBeInTheDocument();
+    const movieList = container.getElementsByClassName("movie-bar");
+    expect(movieList.length).toBe(6);
+    const title = screen.getByText("A New Hope");
+    expect(title).toBeInTheDocument();
     expect(screen.getByText("No Movie Selected")).toBeInTheDocument();
+  });
+  it("on Click of movie item, displays summary and default message removed", () => {
+    const { container } = render(
+      <Provider store={store}>
+        <Movies />
+      </Provider>
+    );
+    const movieList = container.getElementsByClassName("movie-bar");
+    expect(screen.getAllByText("A New Hope").length).toBe(1);
+    fireEvent.click(movieList[0]);
+    expect(screen.getByText("No Movie Selected")).not.toBeInTheDocument();
+    expect(screen.getAllByText("A New Hope").length).toBe(2);
+    expect(screen.getByText("Directed By: George Lucas")).toBeInTheDocument();
+  });
+  it("on search only matching list should be displayed", () => {
+    const { container } = render(
+      <Provider store={store}>
+        <Movies />
+      </Provider>
+    );
+    const movieList = container.getElementsByClassName("movie-bar");
+    expect(movieList.length).toBe(6);
+    const input = screen.getByTestId("searchTerm");
+    fireEvent.change(input, {target:{value:"Return"}});
+    expect(container.getElementsByClassName("movie-bar").length).toBe(1);
+  });
+  it("no match shows error message", () => {
+    render(
+      <Provider store={store}>
+        <Movies />
+      </Provider>
+    );
+    expect(screen.queryByTestId("error")).not.toBeInTheDocument();
+    const input = screen.getByTestId("searchTerm");
+    fireEvent.change(input, {target:{value:"iop"}});
+    expect(screen.queryByTestId("error")).toBeInTheDocument();
+  });
+  it("sort by episode and year ", () => {
+    const {container}=render(
+      <Provider store={store}>
+        <Movies />
+      </Provider>
+    );
+    const input = screen.getByTestId("searchTerm");
+    fireEvent.change(input, {target:{value:""}});
+    const sort = container.getElementsByClassName("sort");
+    const episode = container.getElementsByClassName("episode");
+    expect(episode[0].innerHTML).toBe("Episode 4")
+    fireEvent.mouseOver(sort[0]);
+    const episodeButton =screen.getByText("Episode");
+    fireEvent.click(episodeButton);
+    expect(container.getElementsByClassName("episode")[0]).toBe("Episode 1");
+    expect(container.getElementsByClassName("date")[0]).toBe("1999-05-19");
+    const year =screen.getByText("Year");
+    fireEvent.click(year);
+    expect(container.getElementsByClassName("date")[0]).toBe("1977-05-25");
   });
 });
