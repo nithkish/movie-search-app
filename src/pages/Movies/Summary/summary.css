@@ -4,8 +4,9 @@
   color: var(--light-grey);
   background-color: var(--sec-black);
   padding: 10px 20px 20px 20px;
-  box-shadow:-3px 7px 20px 0px #292727;
+  box-shadow: -3px 7px 20px 0px #292727;
   min-height: 350px;
+  position: relative;
 }
 
 .summary-container p {
@@ -22,16 +23,21 @@
   font-weight: 400;
 }
 
-.default-message{
+.default-message {
   font-size: 20px;
-  font-weight:600;
+  font-weight: 600;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
 }
 
-.summary-container h3{
+.summary-container h3 {
   font-size: 24px;
 }
 
-@media screen and (max-width:550px){
+@media screen and (max-width: 550px) {
   .summary-container {
     margin: auto;
     width: 90%;
