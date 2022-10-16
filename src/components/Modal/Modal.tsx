@@ -35,7 +35,7 @@ const Modal = ({ children }: ModalProps):JSX.Element => {
         {children}
         <div className="modal-footer">
           <button type="button" onClick={() => handleClose()}>
-            Done
+            OK
           </button>
         </div>
       </div>

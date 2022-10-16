@@ -19,6 +19,7 @@ As it is a STARWARS related application, the theme was chosen to be Dark with so
 
 - [React](https://reactjs.org/) single page application - 18.2.0.
 - [Redux Tool Kit](https://redux-toolkit.js.org/) - 1.8.6
+- [Typescript](https://www.typescriptlang.org/) - 4.8.4
 - [axios](https://www.npmjs.com/package/axios) - 1.1.2
 - [classnames](https://www.npmjs.com/package/classnames) - 2.3.2
 
@@ -40,19 +41,20 @@ The project is structured keeping in mind of scalability and reusability. Projec
  - public : which contains the index.html file and one icon for the tab.
  - src: contains the main business logic codes and the structure is as shown below.
   - mocks : contain the files needed for jest library for mocking css.
+  - app: the main store.js file and hooks.js wrapper file is kept here.
   - api: folder for keeping all the reusable service function along the api interceptors and apiClients.
-  - assets: folder for keeping all common assets like icons, logos as well as the global css file to keep the code structure cleaner.
+  - assets: folder for keeping all common assets like icons, logos, screenshots as well as the global css file to keep the code structure cleaner.
   - components:all common re-usable components are kept here. Mostly data and handler driver components are kept here. Atomic pattern is followed for each component.
   - constants: folder consisits of the constants needed for utilities and data driven components.
   - hooks: folder consisits of reusable custom hooks for the application.
   - layout: folder to keep layout components like Headers, Footers, Navigation etc.
   - pages: folder consisits all the different page component, here we have only Home Page. We can keep signup page, login page etc here.
   - redux: folder consisits Slices and thunks of different features, separated in folders.
-  - store: the main store.js file is kept here
+  - utils: folder consits of utility functions for 
 
 Other root files like App.js, index.js are kept inside the src folder.
 
-![Alt text]( "Folder Structure")
+![Alt text](src/assets/screens/structure.jpg "Folder Structure")
 
 ## Available Scripts
 
@@ -85,39 +87,51 @@ App is ready to be deployed!
 
  On landing on the application page, the application loads the list of star war movies from the API. A spinner will be visible depending on the latency of the API.
 
+ ![Alt text](src/assets/screens/home.jpg "Home Screen")
+
 The main functional component of the application consists of below sections.
 
 - Header : component consist of the clickable STAR WAR logo which opens the starwars official website on a new tab on clicking. The Logo is highlighted on hover.
 - Control bar : below the header card is the control bar, which decides how and what we see in the movie list. It contains two components , the seach bar and the sort button.
 
     - Search Bar : dynamic component which takes debounced values and filters the movie list based on the matching substrings. The lens icon is for cosmetic value as the search takes place on change of the input value in the search box.
-    -Sort Button : dynamic data driven component,which can be scalable to contain any number of sort options. The Button opens up the options on hover, rather than a click, so as to reduce the number of clicks and improve the User Experience. All sort options are highlighted on hover, can be selected on click and selected sort option is specifically highlighted.
+
+    ![Alt text](src/assets/screens/search.jpg "Search")
+
+    - Sort Button : dynamic data driven component,which can be scalable to contain any number of sort options. The Button opens up the options on hover, rather than a click, so as to reduce the number of clicks and improve the User Experience. All sort options are highlighted on hover, can be selected on click and selected sort option is specifically highlighted.
+
+    ![Alt text](src/assets/screens/sortOption.jpg "Sort Option")
 
 - Movies List Area : Shows the available list of movies for selection. The selected Movie is highlighted and all the options on hover are brightened.
 Each movie bar contains details of the episode number, title and date of release.
 The movies in list and order in which they are displayed are handled by the control bar. When no movies are available post search, a prompt is displayed.
 
+  ![Alt text](src/assets/screens/selected.jpg "Selected")
+
+  When no movies are available post search, a prompt is displayed.
+
+  ![Alt text](src/assets/screens/error.jpg "Error")
+
 - Summary Card : Presented on the side of Movies List for users with screen width more than 885px, on top of movie list are for users with screen width between 885px and 550px and as a closeable Modal for users with screen width less than 550px. By default the Summary card is empty when there is no selection, and a prompt stating no movies are selected is displayed.
-
-
-  ![Alt text](public/screens/search.png "Search")
 
 
 The page is designed taking into consideration of responsiveness. The application is compatible both in mobile as well as tab screens.
 
 ### Mobile Screen
 
-![Alt text](public/screens/iphone.png "Mobile")
+![Alt text](src/assets/screens/mobile1.jpg "Mobile")
+
+The Summary is displayed as a popup/modal, to have a better UX for mobile users.
+
+![Alt text](src/assets/screens/mobile2.jpg "Pop-up")
 
 ### IPad Screen
 
-![Alt text](public/screens/ipad1.png "IPad1")
-
-![Alt text](public/screens/ipad2.png "IPad2")
-
+![Alt text](src/assets/screens/ipad.jpg "Ipad")
 
 ## Assumptions
 
+- There are no more pages for this application, hence React Router is not implemented.
 
 ## TODO
 
