@@ -1,0 +1,5 @@
+.movie-list-container{
+    padding-top:10px;
+    margin-right:10px;
+    flex : 1 0 50%;
+}

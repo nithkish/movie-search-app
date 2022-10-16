@@ -1,0 +1,32 @@
+.summary-container {
+  width: 100%;
+  border-radius: 6px;
+  color: var(--light-grey);
+  background-color: var(--sec-black);
+  padding: 10px 20px 20px 20px;
+  box-shadow:-3px 7px 20px 0px #292727;
+  min-height: 350px;
+}
+
+.summary-container p {
+  word-wrap: break-word;
+}
+
+.summary-container div div {
+  font-weight: 600;
+  color: var(--yellow);
+}
+
+.summary-container span {
+  color: var(--light-grey);
+  font-weight: 400;
+}
+
+.default-message{
+  font-size: 20px;
+  font-weight:600;
+}
+
+.summary-container h3{
+  font-size: 24px;
+}
