@@ -7,7 +7,15 @@ interface SearchProps {
   setSearchValue: (a: string) => void;
 }
 
-const Search = ({ searchValue, setSearchValue }: SearchProps) => {
+/**
+ * Function Re-usable react search component
+ * @description used for a dynamic search component, 
+ * triggers the handlers on change of input field
+ * @param {string} searchValue - value of the input field
+ * @param {function} setSearchValue - setter of the search value
+ * @returns {JSX.Element} 
+ */
+const Search = ({ searchValue, setSearchValue }: SearchProps):JSX.Element => {
   return (
     <div className="search-wrap">
       <div className="search">

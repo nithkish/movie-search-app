@@ -6,14 +6,21 @@ import { SortOption } from "../../constants/sortOptions";
 import "./sort.css";
 
 interface SortProps {
-  sortOptions : SortOption[];
+  sortOptions: SortOption[];
 }
 
-const Sort = ({ sortOptions }:SortProps) => {
+/**
+ * Function Re-usable react Sort component
+ * @description used for populating dynamic sort options,
+ * on hovering shows the the options dropdown, onclick selects the sort value
+ * @param {SortOption[]} sortOptions -array of SortOption objects having details of sort values
+ * @returns {JSX.Element}
+ */
+const Sort = ({ sortOptions }: SortProps): JSX.Element => {
   const dispatch = useDispatch();
   const sortValue = useSelector(selectSortValue);
 
-  const handleClick = (value:string) => {
+  const handleClick = (value: string) => {
     console.log(sortValue);
     if (value !== sortValue) dispatch(sortBy(value));
   };
@@ -27,6 +34,7 @@ const Sort = ({ sortOptions }:SortProps) => {
         {sortOptions.length > 0 &&
           sortOptions.map((sortOption) => {
             let sortClass = classNames({
+              "sort-value": true,
               selected: sortValue === sortOption.name,
             });
             return (

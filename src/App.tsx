@@ -1,13 +1,13 @@
 import React from 'react';
 import Header from './layout/Header/Header';
-import Home from './pages/Home/Home';
+import Movies from './pages/Movies/Movies';
 
 function App() {
   return (
     <div className="App">
       <Header />
       <div className="app-container">
-        <Home />
+        <Movies />
       </div>
     </div>
   );

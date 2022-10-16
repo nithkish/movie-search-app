@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 /**
  * @description this custom hook checks window's size
- * @param {string} mediaParam
+ * @param {string} mediaParam - the string containing the input range
  * @returns {boolean} true if current screen resolution matches input range
  */
 function useMediaFlag(mediaParam: string) {

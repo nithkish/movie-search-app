@@ -88,5 +88,6 @@ export const selectSortValue = (state: RootState) => state.movies.sortValue;
 export const selectIsLoading = (state: RootState) => state.movies.isLoading;
 export const selectSearchValue = (state: RootState) => state.movies.searchValue;
 export const selectOpenModal = (state: RootState) => state.movies.openModal;
+export const selectMessage = (state: RootState) => state.movies.message;
 
 export default moviesSlice.reducer;

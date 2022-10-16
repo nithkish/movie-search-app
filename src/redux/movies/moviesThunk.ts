@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { getMoviesByFormat } from "../../api/services/movies";
 
+//the AsyncThunk function for the api call
 export const getMovies = createAsyncThunk(
   "movies/getData",
   //dummyArg -dummy variable to use rejectWithValue

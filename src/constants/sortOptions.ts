@@ -1,3 +1,4 @@
+//file to keep sort option values, more values can be added if neccessary 
 
 export interface SortOption {
   id: number;

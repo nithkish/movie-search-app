@@ -8,7 +8,13 @@ interface ModalProps {
   children: React.ReactNode;
 }
 
-const Modal = ({ children }: ModalProps) => {
+/**
+ * Functional react component for Modal
+ * @description can be used to display any child component as a modal 
+ * @param {React.ReactNode} - children : component that needs to be wrapped into Modal
+ * @return {JSX.Element} 
+ */
+const Modal = ({ children }: ModalProps):JSX.Element => {
   const dispatch = useDispatch();
 
   const handleClose = () => {

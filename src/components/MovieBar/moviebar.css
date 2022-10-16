@@ -38,7 +38,7 @@
   text-align: left;
 }
 
-.description {
+.title {
   color: var(--black);
   flex: 1 0;
   font-weight: 600;
@@ -52,7 +52,7 @@
 }
 
 .episode,
-.description,
+.title,
 .date {
   cursor: inherit;
 }
