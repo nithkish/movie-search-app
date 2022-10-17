@@ -27,11 +27,10 @@
   text-decoration: none;
   display: block;
   border-radius: 5px;
-  border-bottom: 1px var(--jet) solid;
 }
 
-.sort-content div:last-child {
-  border-bottom:none;
+.sort-content div:not(:last-child) {
+  border-bottom: 1px var(--jet) solid;
 }
 
 .sort-content .selected {
